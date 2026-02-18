@@ -1,0 +1,24 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* background image will be set inline in base.html via Jinja url_for */
+}
+
+.navbar-brand {
+    font-weight: bold;
+}
+
+h1, h2 {
+    margin-top: 1rem;
+}
+
+.form-label {
+    font-weight: 500;
+}
+
+.btn-primary {
+    min-width: 120px;
+}
+
+.alert-custom {
+    font-size: 1.2rem;
+}

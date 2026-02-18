@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block title %}Predict Transaction{% endblock %}
+
+{% block content %}
+<h2 class="text-center mb-4">Enter Transaction Details</h2>
+<form action="/submit" method="post" class="mx-auto" style="max-width:500px;">
+    <div class="mb-3">
+        <label class="form-label" for="step">Step</label>
+        <input class="form-control" type="number" id="step" name="step" required>
+    </div>
+    <div class="mb-3">
+        <label class="form-label" for="type">Type</label>
+        <select class="form-select" name="type" id="type" required>
+            <option value="0">PAYMENT</option>
+            <option value="1">TRANSFER</option>
+            <option value="2">CASH_OUT</option>
+            <option value="3">DEBIT</option>
+        </select>
+        <small class="form-text text-muted">Select a transaction type.</small>
+    </div>
+    <div class="mb-3">
+        <label class="form-label" for="amount">Amount</label>
+        <input class="form-control" type="number" step="any" id="amount" name="amount" required>
+    </div>
+    <div class="mb-3">
+        <label class="form-label" for="oldbalanceOrg">Old Balance Origin</label>
+        <input class="form-control" type="number" step="any" id="oldbalanceOrg" name="oldbalanceOrg" required>
+    </div>
+    <div class="mb-3">
+        <label class="form-label" for="newbalanceOrig">New Balance Origin</label>
+        <input class="form-control" type="number" step="any" id="newbalanceOrig" name="newbalanceOrig" required>
+    </div>
+    <div class="mb-3">
+        <label class="form-label" for="oldbalanceDest">Old Balance Dest</label>
+        <input class="form-control" type="number" step="any" id="oldbalanceDest" name="oldbalanceDest" required>
+    </div>
+    <div class="mb-3">
+        <label class="form-label" for="newbalanceDest">New Balance Dest</label>
+        <input class="form-control" type="number" step="any" id="newbalanceDest" name="newbalanceDest" required>
+    </div>
+    <div class="text-center">
+        <button class="btn btn-primary" type="submit">Submit</button>
+    </div>
+</form>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    // focus on first input when page loads
+    document.getElementById('step').focus();
+</script>
+{% endblock %}
